@@ -20,6 +20,27 @@ public class HomeController : Controller
 
     public IActionResult Privacy()
     {
+        ViewData["Mensagem"] = "Oi mundo";
+        Categoria categoria = new ();
+        categoria.id = 1;
+        categoria.Nome = "Tecnologia";
+        Categoria categoria2 = new () 
+        {
+            id = 2,
+            Nome = "IA"
+        };
+        
+        List<Postagem> postagens = [
+            new (){
+                Id = 1,
+                Nome = "Saiu o ChatGPT 5",
+                CategoriaId = 2,
+                categoria = categoria2,
+                DataPostagem = DateTime.Parse("08/08/2025"),
+                Descricao = "bvasbvçobnbvaklabnçkvbkçxbvçkbn",
+                Texto = "vaskbvabs vboj "
+            }
+        ];
         return View();
     }
 

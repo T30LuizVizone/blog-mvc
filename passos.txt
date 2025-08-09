@@ -1,6 +1,6 @@
 Configurando o Git
 git config --global user.name T30LuizVizone
-git config --global  user.mail luizvizone958@gmail.com
+git config --global user.email luizvizone958@gmail.com
 
 Criando um projeto MVC
 dotnet new mvc -o BLOG-MVC
