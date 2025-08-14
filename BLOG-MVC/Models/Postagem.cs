@@ -4,7 +4,7 @@ namespace BLOG_MVC.Models;
 
 public class Postagem
 {
-public int id { get; set; }
+public int Id { get; set; }
 
 [Required]
 [StringLength(100)]
@@ -18,7 +18,7 @@ public Categoria Categoria { get; set; }
 [DataType(DataType.Date)]
 public DateTime DataPostagem { get; set; }
 
-public string Descrição { get; set; }
+public string Descricao { get; set; }
 
 public string Texto { get; set; }
 

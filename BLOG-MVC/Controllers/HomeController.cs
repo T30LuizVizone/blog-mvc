@@ -20,28 +20,45 @@ public class HomeController : Controller
 
     public IActionResult Privacy()
     {
-        ViewData["Mensagem"] = "Oi mundo";
-        Categoria categoria = new ();
-        categoria.id = 1;
-        categoria.Nome = "Tecnologia";
+        
+        Categoria Tecnologia = new Categoria();
+       Tecnologia.Id = 1;
+       Tecnologia.Nome = "Tecnologia";
+
         Categoria categoria2 = new () 
         {
-            id = 2,
+            Id = 2,
             Nome = "IA"
         };
+
+        Categoria motos = new(3,"moto");
         
         List<Postagem> postagens = [
             new (){
                 Id = 1,
-                Nome = "Saiu o ChatGPT 5",
+                Nome = " Motos ",
                 CategoriaId = 2,
-                categoria = categoria2,
+                Categoria = categoria2,
                 DataPostagem = DateTime.Parse("08/08/2025"),
-                Descricao = "bvasbvçobnbvaklabnçkvbkçxbvçkbn",
-                Texto = "vaskbvabs vboj "
-            }
+                Descricao = "A nova" Africa Twin",
+                Texto = " A grande novidade da Africa Twin 2025 é a adoção de uma roda dianteira de 19 polegadas na versão Adventure Sports. Essa mudança visa otimizar o comportamento da moto em estradas asfaltadas, sem comprometer suas capacidades off-road. ",
+                Thumbnail = "BLOG-MVC/wwwroot/img/Africa Twin 2025.png",
+                Foto = "BLOG-MVC/wwwroot/img/Africa Twin 2025.png",
+            },
+
+             new (){
+                Id = 1,
+                Nome = " Motos ",
+                CategoriaId = 2,
+                Categoria = categoria2,
+                DataPostagem = DateTime.Parse("08/08/2025"),
+                Descricao = "Nova CG-160",
+                Texto = "Outra grande novidade da família CG 2025 é que todas as versões possuem rodas de liga leve, assim como os freios na dianteira são a disco. Na versão topo de linha, CG 160 Titan, estreia o sistema antitravamento ABS (Anti-lock Brake System) na dianteira e o freio a disco na traseira.",
+                Thumbnail = "BLOG-MVC/wwwroot/img/CG-160.jpg",
+                Foto = "BLOG-MVC/wwwroot/img/CG-160.jpg",
+            },
         ];
-        return View();
+        return View(postagens);
     }
 
     [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
@@ -50,3 +67,6 @@ public class HomeController : Controller
         return View(new ErrorViewModel { RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier });
     }
 }
+
+
+
